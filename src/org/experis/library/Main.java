@@ -32,7 +32,7 @@ public class Main {
                 list[i] = new Book(title,pages,author,editor);
             }
         } catch (IllegalArgumentException e){
-                System.out.println(e.getMessage());
+            System.out.println(e.getMessage());
         }
 
 
