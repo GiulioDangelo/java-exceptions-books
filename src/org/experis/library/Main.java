@@ -14,22 +14,27 @@ public class Main {
         scan.nextLine();
         Book[] list = new Book[index];
 
-        for (int i = 0; i < list.length; i++) {
-            System.out.println("qual'è il titolo del libro?");
-            String title = scan.nextLine();
+        try {
+            for (int i = 0; i < list.length; i++) {
+                System.out.println("qual'è il titolo del libro?");
+                String title = scan.nextLine();
 
-            System.out.println("quanti pagine ha?");
-            int pages = scan.nextInt();
-            scan.nextLine();
+                System.out.println("quanti pagine ha?");
+                int pages = scan.nextInt();
+                scan.nextLine();
 
-            System.out.println("chi è l'autore?");
-            String author = scan.nextLine();
+                System.out.println("chi è l'autore?");
+                String author = scan.nextLine();
 
-            System.out.println("chi è l'editore?");
-            String editor = scan.nextLine();
+                System.out.println("chi è l'editore?");
+                String editor = scan.nextLine();
 
-            list[i] = new Book(title,pages,author,editor);
+                list[i] = new Book(title,pages,author,editor);
+            }
+        } catch (IllegalArgumentException e){
+                System.out.println(e.getMessage());
         }
+
 
 
         try (FileWriter fileWriter = new FileWriter("./resources/data.txt")){
