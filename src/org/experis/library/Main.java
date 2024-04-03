@@ -1,5 +1,9 @@
 package org.experis.library;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
@@ -24,7 +28,29 @@ public class Main {
             System.out.println("chi è l'editore?");
             String editor = scan.nextLine();
 
-            Book book = new Book(title,pages,author,editor);
+            list[i] = new Book(title,pages,author,editor);
         }
+
+
+        try (FileWriter fileWriter = new FileWriter("./resources/data.txt")){
+            for (Book element : list) {
+                fileWriter.write(element.toString());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("file not found");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        try(Scanner fileReader = new Scanner(new File("./resources/data.txt"))){
+            while (fileReader.hasNextLine()){
+                System.out.println(fileReader.nextLine());
+            }
+        }catch (FileNotFoundException e){
+            System.out.println("file not found");
+        }
+
+        scan.close();
     }
 }

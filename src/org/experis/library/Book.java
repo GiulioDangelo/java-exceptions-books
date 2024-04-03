@@ -67,4 +67,15 @@ public class Book {
         validateString(editor);
         this.editor = editor;
     }
+
+    @Override
+    public String toString() {
+        return "Book: " +
+                "title='" + title + '\'' +
+                ", pages=" + pages +
+                ", author='" + author + '\'' +
+                ", editor='" + editor + '\'' +
+                "\n";
+
+    }
 }
