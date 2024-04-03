@@ -21,14 +21,14 @@ public class Book {
     }
 
     private void validateString(String input) throws IllegalArgumentException{
-        if (input.isEmpty()){
-            throw new IllegalArgumentException("il campo " + input + "non può essere vuoto");
+        if (input == null || input.isEmpty()){
+            throw new IllegalArgumentException("il campo non può essere vuoto");
         }
     }
 
     private void validateInt(int input) throws IllegalArgumentException{
         if (input <= 0){
-            throw new IllegalArgumentException("il numero di " + input + "non può essere 0 o minore di 0");
+            throw new IllegalArgumentException("il numero di inserito non può essere 0 o minore di 0");
         }
     }
 
