@@ -48,22 +48,22 @@ public class Book {
         return editor;
     }
 
-    public void setTitle(String title) {
+    public void setTitle(String title) throws IllegalArgumentException{
         validateString(title);
         this.title = title;
     }
 
-    public void setPages(int pages) {
+    public void setPages(int pages) throws IllegalArgumentException{
         validateInt(pages);
         this.pages = pages;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(String author) throws IllegalArgumentException{
         validateString(author);
         this.author = author;
     }
 
-    public void setEditor(String editor) {
+    public void setEditor(String editor) throws IllegalArgumentException{
         validateString(editor);
         this.editor = editor;
     }
